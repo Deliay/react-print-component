@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Print.css"
 
-export class PrintComponent extends Component {
+export default class PrintComponent extends Component {
     constructor(props) {
         super(props);
         if (PrintComponent.Instance) {
