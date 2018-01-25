@@ -4,5 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^16.2.0"
-  }
+  },
+  "author": "Deliay",
+  "license": "MIT"
 }
