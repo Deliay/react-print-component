@@ -39,9 +39,6 @@ var PrintComponent = function (_Component) {
             print: false,
             singlePage: props.singlePage
         };
-
-        PrintComponent.Instance = null;
-        PrintComponent.SetPrintContent = function (component) {};
         return _this;
     }
 
