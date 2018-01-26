@@ -1,5 +1,6 @@
-# Print Component
-    Pirnt your component!
+# React Print Component
+    Print your component!
+
 ## Arguments
 
 | Name | Type | Default | Description |
@@ -8,60 +9,60 @@
 
 ## Example Usage
 
-1. Add `<Print />` Element to your root element
+1. Add `<PrintComponent />` Element to your root element
 
-```jsx
+    ```jsx
 
-...
+    ...
 
-render() {
-    return (
-        <div>
-            <PrintComponent />
-            <div className="main-root"></div>
-        </div>
-    );
-}
+    render() {
+        return (
+            <div>
+                <PrintComponent />
+                <div className="main-root"></div>
+            </div>
+        );
+    }
 
-...
+    ...
 
-```
+    ```
 
 2. Use static functions to print your components.
-```js
-import PrintComponent from 'react-print-component';
+    ```js
+    import PrintComponent from 'react-print-component';
 
-export class TestComponent() {
-
-    ...
-
-    onClickPrint() {
-        //Which component should render
-        PrintComponent.SetPrintContent(this.render());
+    export class TestComponent() {
 
         ...
-        do something
-        ...
 
-        //Call this method to print
-        PrintComponent.Print();
+        onPrintButtonClick() {
+            //Which component should render
+            PrintComponent.SetPrintContent(this.render());
+
+            ...
+            do something
+            ...
+
+            //Call this method to print
+            PrintComponent.Print();
+        }
+
+        ...
     }
-
-    ...
-}
-```
+    ```
 
 3. Write print style in `@media`
-```css
-    @media print {
-        
-        ...
-        
-        h1 {}
-        h2 {}
-        button {}
-        input[type=text] {}
+    ```css
+        @media print {
+            
+            ...
+            
+            h1 {}
+            h2 {}
+            button {}
+            input[type=text] {}
 
-        ...
-    }
-```
+            ...
+        }
+    ```
