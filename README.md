@@ -29,7 +29,7 @@ render() {
 
 2. Use static functions to print your components.
 ```js
-import { PrintComponent } from 'react-print-component';
+import PrintComponent from 'react-print-component';
 
 export class TestComponent() {
 
