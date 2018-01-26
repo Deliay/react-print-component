@@ -15,6 +15,11 @@ export default class PrintComponent extends Component {
             print: false,
             singlePage: props.singlePage,
         };
+
+        PrintComponent.Instance = null;
+        PrintComponent.SetPrintContent = function(component) {
+            
+        }
     }
 
     static Instance;
