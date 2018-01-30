@@ -16,13 +16,28 @@ export default class PrintComponent extends Component {
             singlePage: props.singlePage,
         };
     }
-
+    /**
+     * @type {PrintComponent}
+     */
     static Instance;
 
     static SetPrintContent(component) {
+        var xs = [];
+        xs.push(component);
         PrintComponent.Instance.setState({
-            component: component,
+            component: xs,
         });
+    }
+
+    static AddPrintContent(component) {
+        var xs = PrintComponent.Instance.state.component;
+        if (!xs) xs = [];
+        xs.push(component);
+        PrintComponent.Instance.setState({ component: xs });
+    }
+
+    static GetPrintComponent() {
+        return PrintComponent.Instance.state.component;
     }
 
     static Print() {
