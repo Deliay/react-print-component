@@ -37,9 +37,13 @@
         ...
 
         onPrintButtonClick() {
-            //Which component should render
+            //Replace components added
             PrintComponent.SetPrintContent(this.render());
-
+            //Add components to list
+            PrintComponent.AddPrintContent(this.render());
+            PrintComponent.AddPrintContent(<div>{"Mulit element"}</div>);
+            //Clear all added components in list
+            PrintComponent.ClearComponent();
             ...
             do something
             ...
