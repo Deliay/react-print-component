@@ -1,6 +1,19 @@
 import React, { Component } from "react";
 import "./Print.css"
 
+class PrintWarpper extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            component: props.component,
+        };
+    }
+
+    render(){
+        return this.state.component;
+    }
+}
+
 export default class PrintComponent extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +36,8 @@ export default class PrintComponent extends Component {
 
     static SetPrintContent(component) {
         var xs = [];
-        xs.push(component);
+        var x = <PrintWarpper component={component} />;
+        xs.push(x);
         PrintComponent.Instance.setState({
             component: xs,
         });
@@ -32,12 +46,18 @@ export default class PrintComponent extends Component {
     static AddPrintContent(component) {
         var xs = PrintComponent.Instance.state.component;
         if (!xs) xs = [];
-        xs.push(component);
+        var x = <PrintWarpper component={component} />;
+        xs.push(x);
         PrintComponent.Instance.setState({ component: xs });
     }
 
     static GetPrintComponent() {
         return PrintComponent.Instance.state.component;
+    }
+
+    static ClearComponent() {
+        
+        PrintComponent.Instance.setState({ component: [] });
     }
 
     static Print() {
@@ -61,7 +81,7 @@ export default class PrintComponent extends Component {
             : "react-print-hidden ";
         let page = this.state.singlePage
             ? "react-print-single"
-            : "";
+            : "react-print-multi";
         return print + page;
     }
 
